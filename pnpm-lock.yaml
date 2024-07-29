@@ -18,8 +18,8 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1
       exha:
-        specifier: ^1.0.51
-        version: 1.0.51
+        specifier: ^1.0.61
+        version: 1.0.61
       express:
         specifier: ^4.19.2
         version: 4.19.2
@@ -249,8 +249,8 @@ packages:
     resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
     engines: {node: '>= 0.6'}
 
-  exha@1.0.51:
-    resolution: {integrity: sha512-WgHRjyXJJjyWjdZ3hW/tt1dGu/MXwdl16Jz4BQCokPNM0rngJax6ReKsVED4hNqlE14S0H+K+qf9KjIZp5LcBQ==}
+  exha@1.0.61:
+    resolution: {integrity: sha512-Y4w6FlsUO/Qu2+22Gxs3vfjl9iUXHaYA0BvMUOvKiaa/smtVKVa9UwENyHa8IhN942QrehSFzj2DnmgkZbCrdA==}
 
   express@4.19.2:
     resolution: {integrity: sha512-5T6nhjsT+EOMzuck8JjBHARTHfMht0POzlA60WV2pMD3gyXw2LZnZ+ueGdNxG+0calOJcWKbpFcuzLZ91YWq9Q==}
@@ -770,8 +770,9 @@ snapshots:
 
   etag@1.8.1: {}
 
-  exha@1.0.51:
+  exha@1.0.61:
     dependencies:
+      '@types/express': 4.17.21
       clcn: 2.0.1
       cors: 2.8.5
       express: 4.19.2
