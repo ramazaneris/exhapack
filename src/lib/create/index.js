@@ -36,13 +36,14 @@ let createProject = (answers, targetDir, projectName) => {
         packInstaller(["@types/node", "@types/express", "--save-dev"], {
             cwd: targetDir,
         });
+    } else {
+        packInstaller(["nodemon", "--save-dev"], { cwd: targetDir });
     }
-
-    packInstaller(["nodemon", "--save-dev"], { cwd: targetDir });
 
     console.log("Project created successfully!");
     console.log("To start the project, run the following commands:");
-    console.log(``);
+    console.log(`cd ${projectName}`);
+    console.log("pnpm start");
 };
 
 module.exports = { createProject };
