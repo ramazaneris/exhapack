@@ -9,8 +9,8 @@ const packInstaller = async (packs, options) => {
         console.log(
             clcn.bgGreen(
                 `Installed: ${joinedPacks
-                    .filter((pack) => pack !== "--save-dev")
                     .split(" ")
+                    .filter((pack) => pack !== "--save-dev")
                     .join(", ")}`
             )
         );
