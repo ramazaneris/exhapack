@@ -26,8 +26,8 @@ let createTSProject = (answers, targetDir) => {
         staticDir: "./" + answers.staticDir,
     };
 
-    if (answers.formParser) {
-        config.formParser = true;
+    if (answers.parseForm) {
+        config.parseForm = true;
     }
 
     if (answers.imageUploader) {

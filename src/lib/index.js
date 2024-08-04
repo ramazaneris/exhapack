@@ -7,10 +7,10 @@ const path = require("path");
 
 async function create(projectName) {
     const answers = await getPrompts();
-    let targetDir = path.join(process.cwd(), projectName);
+    let targetDir = path.join(process.cwd(), projectName ? projectName : ".");
 
     fs.ensureDirSync(targetDir);
-    
+
     if (answers.typescript) {
         createTSProject(answers, targetDir);
     } else {

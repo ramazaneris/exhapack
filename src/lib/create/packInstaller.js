@@ -7,7 +7,12 @@ const packInstaller = async (packs, options) => {
     try {
         execSync(`pnpm install ${joinedPacks}`, options);
         console.log(
-            clcn.bgGreen(`Installed: ${joinedPacks.split(" ").join(", ")}`)
+            clcn.bgGreen(
+                `Installed: ${joinedPacks
+                    .filter((pack) => pack !== "--save-dev")
+                    .split(" ")
+                    .join(", ")}`
+            )
         );
     } catch (error) {
         console.error(

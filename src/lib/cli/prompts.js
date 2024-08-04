@@ -21,7 +21,7 @@ let prompts = [
     },
     {
         type: "confirm",
-        name: "formParser",
+        name: "parseForm",
         message: "Would you like to parse forms?",
         default: true,
     },

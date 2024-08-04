@@ -5,7 +5,7 @@ const { packInstaller } = require("./packInstaller");
 
 let createProject = (answers, targetDir, projectName) => {
     let packageJson = {
-        name: projectName,
+        name: projectName ? projectName : "exha-app",
         version: "1.0.0",
         description: "",
         main: answers.typescript ? "index.ts" : "index.js",
@@ -42,7 +42,9 @@ let createProject = (answers, targetDir, projectName) => {
 
     console.log("Project created successfully!");
     console.log("To start the project, run the following commands:");
-    console.log(`cd ${projectName}`);
+    if (projectName) {
+        console.log(`cd ${projectName}`);
+    }
     console.log("pnpm start");
 };
 
