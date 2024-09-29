@@ -22,9 +22,13 @@ let createTSProject = (answers, targetDir) => {
     );
 
     let config = {
-        routeDir: "./" + answers.routeDir,
-        staticDir: "./" + answers.staticDir,
+        routeDir: "/" + answers.routeDir,
     };
+
+    if (answers.staticDir) {
+        config.staticDir = "/" + answers.staticDir;
+        fs.ensureDirSync(path.join(targetDir, answers.staticDir));
+    }
 
     if (answers.parseForm) {
         config.parseForm = true;

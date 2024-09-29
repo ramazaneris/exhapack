@@ -1,5 +1,4 @@
 const path = require("path");
-const { execSync } = require("child_process");
 let fs = require("fs-extra");
 const { packInstaller } = require("./packInstaller");
 
@@ -24,11 +23,15 @@ let createProject = (answers, targetDir, projectName) => {
         JSON.stringify(packageJson, null, 2)
     );
 
-    console.log("Installing dependencies...");
+    console.log("◌ Installing dependencies...");
     packInstaller(["express", "exha"], { cwd: targetDir });
 
+    if (answers.imageUploader) {
+        packInstaller(["multer"], { cwd: targetDir });
+    }
+
     if (answers.typescript) {
-        console.log("Installing typescript dependencies...");
+        console.log("◌ Installing typescript dependencies...");
         packInstaller(["typescript", "ts-node", "ts-node-dev"], {
             cwd: targetDir,
         });
@@ -40,12 +43,12 @@ let createProject = (answers, targetDir, projectName) => {
         packInstaller(["nodemon", "--save-dev"], { cwd: targetDir });
     }
 
-    console.log("Project created successfully!");
-    console.log("To start the project, run the following commands:");
+    console.log("✓ Project created successfully!");
+    console.log("✓ To start the project, run the following commands:");
     if (projectName) {
-        console.log(`cd ${projectName}`);
+        console.log(`\ncd ${projectName}`);
     }
-    console.log("pnpm start");
+    console.log("\npnpm start");
 };
 
 module.exports = { createProject };

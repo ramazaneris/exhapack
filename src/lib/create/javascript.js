@@ -16,8 +16,8 @@ let createJSProject = (answers, targetDir) => {
     );
 
     let config = {
-        routeDir: "./" + answers.routeDir,
-        staticDir: "./" + answers.staticDir,
+        routeDir: "/" + answers.routeDir,
+        staticDir: "/" + answers.staticDir,
     };
 
     if (answers.parseForm) {

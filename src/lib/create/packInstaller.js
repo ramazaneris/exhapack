@@ -8,7 +8,7 @@ const packInstaller = async (packs, options) => {
         execSync(`pnpm install ${joinedPacks}`, options);
         console.log(
             clcn.bgGreen(
-                `Installed: ${joinedPacks
+                `✓ Installed: ${joinedPacks
                     .split(" ")
                     .filter((pack) => pack !== "--save-dev")
                     .join(", ")}`
@@ -16,7 +16,7 @@ const packInstaller = async (packs, options) => {
         );
     } catch (error) {
         console.error(
-            clcn.txtRed(`Command failed: "pnpm install ${joinedPacks}"`)
+            clcn.txtRed(`✘ Command failed: "pnpm install ${joinedPacks}"`)
         );
         console.error(error.stderr);
         throw error;

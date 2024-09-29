@@ -29,7 +29,7 @@ let prompts = [
         type: "confirm",
         name: "imageUploader",
         message: "Would you like to image uploader?",
-        default: false,
+        default: true,
     },
 ];
 
