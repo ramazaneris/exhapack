@@ -26,7 +26,7 @@ let createProject = (answers, targetDir, projectName) => {
 	);
 
 	console.log("◌ Installing dependencies...");
-	packInstaller(["express", "../exha", "../exhapack"], { cwd: targetDir });
+	packInstaller(["express", "exha"], { cwd: targetDir });
 
 	if (answers.imageUploader) {
 		packInstaller(["multer"], { cwd: targetDir });
